@@ -1,0 +1,76 @@
+.heroBanner {
+  height: 480px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--black);
+  .backdrop-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0.7;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .opacity-layer {
+    width: 100%;
+    position: absolute;
+    height: 250px;
+    background: linear-gradient(180deg, rgba(25, 55, 99, 0) 0, #0a2955);
+    bottom: 0;
+    left: 0;
+  }
+  .heroBannerContent {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    .title {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      z-index: 10;
+    }
+    .subTitle {
+      margin-bottom: 20px;
+      z-index: 10;
+    }
+    .searchInput {
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
+      input {
+        width: calc(100% - 300px);
+        outline: line;
+        border: none;
+        padding: 1rem;
+        border-radius: 30px 0 0 30px;
+        :focus-visible {
+            outline: none;
+            border: none;
+        }
+      }
+      button {
+        outline: line;
+        border: none;
+        border-radius: 0px 30px 30px 0px;
+        padding: 1.2rem;
+        cursor: pointer;
+        background: var(--gradient);
+      }
+    }
+  }
+}

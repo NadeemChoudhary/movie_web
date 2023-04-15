@@ -1,0 +1,14 @@
+/*  MOb Version */
+@mixin sm {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+
+/*  Tab Version */
+@mixin md {
+  @media screen and (max-width: 762) {
+    @content;
+  }
+}
