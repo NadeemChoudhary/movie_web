@@ -1,12 +1,63 @@
 @import "../../mixin.scss";
-
+.header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  
+  color: white;
+}
 .container {
+  padding: 0 2rem;
+  background: rgba(0, 0, 0, 0.247);
+  display: flex;
+  justify-content: space-between;
   .logo {
-    width: 150px;
-    height: 150px;
-    img{
-        width: 100%;
-        width: 100%;
+    width: 85px;
+    height: 85px;
+    img {
+      padding: 1rem;
+      width: 100%;
+      width: 100%;
     }
-} 
+  }
+  ul {
+
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    list-style: none;
+    :hover{
+      cursor: pointer;
+      text-decoration: underline;
+      transition: all 900ms ease;
+    }
+  }
+}
+
+.Search{
+  transition: all 500ms ease-in;
+  position: absolute;
+  top: 12%;
+  width: 100%;
+  z-index: 100;
+  left: 0;
+  display: flex;
+  align-items: center;
+  input{
+    padding: .8rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    
+  }
+  .cross{
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    color: black;
+    font-size: 1.6rem;
+
+  }
 }
