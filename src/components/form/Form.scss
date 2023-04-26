@@ -1,0 +1,49 @@
+.wrappers {
+  width: 200px;
+  background-color: red;
+  margin: 10% auto;
+  padding: 1rem 2rem;
+  .box {
+    margin: 1rem auto;
+    .input_box {
+      position: relative;
+      width: 100%;
+      margin: 1rem auto;
+      border-bottom: 1px solid;
+      label {
+        position: absolute;
+        top: 10px;
+        transition: 0.5s;
+      }
+      input {
+        width: 100%;
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 10px;
+        transition: 0.5s;
+      }
+      input:focus ~ label,
+      input:focus ~ :valid {
+        transform: translateY(-25px);
+      }
+      .icon {
+        position: absolute;
+        right: 0;
+        z-index: 10;
+        top: 10px;
+        padding: 0.5rem;
+        // width: 30px;
+        // height: 30px;
+        // background-color: green;
+      }
+    }
+    .btn {
+      background-color: green;
+      color: white;
+      border-radius: 50px;
+      padding: .5rem;
+    }
+  }
+}

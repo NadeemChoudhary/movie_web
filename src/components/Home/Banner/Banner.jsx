@@ -7,6 +7,7 @@ import Wrapper from '../../wrapper/Wrapper';
 import './Baner.scss'
 import { StoreData } from '../../../Store/ZustandStore';
 function Banner() {
+    const navigate = useNavigate();
     const passwordHintId = useId();
     const { DataZ } = StoreData(state => state)
     const [BackGround, setBackGround] = useState("");
@@ -14,7 +15,6 @@ function Banner() {
     const { Data, Loading } = FetchApiHook("movie/popular");
     console.log(Data, "Popular")
     const [Query, setQuery] = useState(null)
-    const navigate = useNavigate();
     const SearchResult = (e) => {
         StoreData.setState({DataZ : "ok"})
         if (e.key === "Enter" && Query.length > 0) {
@@ -22,7 +22,8 @@ function Banner() {
             navigate(`/search/${Query}`)
         }
     }
-    console.log(DataZ , "DataZ")
+    console.log(DataZ , "DataZ");
+    
     useEffect(() => {
 
         const bg = url + Data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path;
@@ -51,11 +52,11 @@ function Banner() {
                             <input
                                 aria-describedby={passwordHintId}
                                 type="text"
-                                placeholder="Search for a movie or tv show...."
+                                placeholder="Search for a movie or tv shows...."
                                 onChange={(e) => setQuery(e.target.value)}
                                 onKeyUp={SearchResult}
                             />
-                            <p id={passwordHintId} />
+                    
 
                             <button>Search</button>
                         </div>

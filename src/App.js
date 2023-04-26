@@ -11,10 +11,11 @@ import Detail from './components/Details/Detail';
 import Explore from './components/explore/Explore';
 import { BannerActions } from './Store/Home/HomeAction';
 import Header from './components/HeadFoot/Header';
+import Form from './components/form/Form';
 
 
 function App() {
-const { App } = useSelector(state => state);
+  const { App } = useSelector(state => state);
   const dispatch = useDispatch();
   const Fetch = async () => {
     const { images } = await FetchData("/configuration");
@@ -28,10 +29,11 @@ const { App } = useSelector(state => state);
   return (
     <>
 
-          <Header />
       <BrowserRouter>
+      <Header />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/form' element={<Form />} />
           <Route path='/explore/:type' element={<Explore />} />
           <Route path='/:type/:id' element={<Detail />} />
           <Route path='/search/:query ' element={<Search />} />

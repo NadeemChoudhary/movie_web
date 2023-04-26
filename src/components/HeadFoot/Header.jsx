@@ -4,11 +4,26 @@ import './Header.scss'
 import { BiSearchAlt2 } from 'react-icons/bi'
 import { RxCross2 } from 'react-icons/rx'
 import Wrapper from '../wrapper/Wrapper';
+import { Link, useNavigate } from 'react-router-dom';
 function Header() {
+  const navigate = useNavigate();
   const [Query, setQuery] = useState(null);
   const [Show, setShow] = useState(false)
-  const SearchResult = () => {
+  const SearchResult = (e) => {
+    if (e.key === "Enter" && Query.length > 0) {
+      console.log('first')
+      navigate(`/search/${Query}`)
+      setTimeout(() => setShow(false), 2000)
+    }
+  };
 
+  const navigateTo = (type) => {
+    if (type === "movie") {
+      navigate("/explore/movie")
+    } else {
+      navigate("/explore/shows")
+
+    }
   }
   return (
     // movix-logo
@@ -16,27 +31,27 @@ function Header() {
       <div className="header">
         <div className="container">
           <div className="logo">
-            <img src={logo} />
+            <Link to="/" ><img src={logo} /></Link>
+
           </div>
           <ul>
-            <li>
-              Movies
-            </li>
-            <li>TV Show</li>
-            <li><BiSearchAlt2 onClick={()=> setShow(!Show)}/></li>
+            <li onClick={() => navigateTo("movie")}>Movies</li>
+            <li onClick={() => navigateTo("shows")}>TV Show</li>
+            <li><BiSearchAlt2 onClick={() => setShow(!Show)} /></li>
           </ul>
         </div>
       </div>
-      <div className="Search">
+      <div className={`Search ${Show ? "ShowInput" : "HideInput"}`}>
         {
-          Show &&
+          // Show &&
           <>
             <input
+
               type="text"
               placeholder="Search for a movie or tv show...."
               onChange={(e) => setQuery(e.target.value)}
               onKeyUp={SearchResult}
-            /><RxCross2 className='cross' onClick={()=> setShow(false)}/>
+            /><RxCross2 className='cross' onClick={() => setShow(false)} />
           </>
         }
       </div>

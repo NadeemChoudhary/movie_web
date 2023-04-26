@@ -1,11 +1,11 @@
 @import "../../mixin.scss";
-.header{
+.header {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
   width: 100%;
-  
+
   color: white;
 }
 .container {
@@ -23,12 +23,11 @@
     }
   }
   ul {
-
     display: flex;
     gap: 2rem;
     align-items: center;
     list-style: none;
-    :hover{
+    :hover {
       cursor: pointer;
       text-decoration: underline;
       transition: all 900ms ease;
@@ -36,7 +35,7 @@
   }
 }
 
-.Search{
+.Search {
   transition: all 500ms ease-in;
   position: absolute;
   top: 12%;
@@ -45,19 +44,26 @@
   left: 0;
   display: flex;
   align-items: center;
-  input{
-    padding: .8rem;
+  input {
+    padding: 0.8rem;
     width: 100%;
     border: none;
     outline: none;
-    
   }
-  .cross{
+
+  .cross {
     cursor: pointer;
     position: absolute;
     right: 10px;
     color: black;
     font-size: 1.6rem;
-
   }
+}
+
+.HideInput {
+  transform: translateY(-150px);
+  opacity: 0.1;
+}
+.ShowInput {
+  transform: translateY(0px);
 }
