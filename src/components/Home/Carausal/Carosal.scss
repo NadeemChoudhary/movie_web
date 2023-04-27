@@ -1,0 +1,36 @@
+.cr_item {
+  margin-top: 2rem;
+  display: flex;
+  gap: 10px;
+  overflow-y: hidden;
+  margin-right: -20px;
+  margin-left: -20px;
+  padding: 0 20px;
+  //   width: 40%;
+//   overflow: hidden;
+  .Box {
+    width: 175px;
+    cursor: pointer;
+    flex-shrink: 0;
+    // height: 15vh;
+    .poster {
+        position: relative;
+        padding: 10px;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 20px;
+        }
+    }
+    .title{
+        color: white;
+        font-size: .9rem;
+        line-height: 1.1rem;
+    }
+    .Date{
+        color: var(--greys);
+        margin-top: .4rem;
+        font-size: .8rem;
+    }
+  }
+}

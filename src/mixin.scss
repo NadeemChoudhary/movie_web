@@ -5,10 +5,15 @@
   }
 }
 
-
 /*  Tab Version */
 @mixin md {
   @media screen and (max-width: 762) {
     @content;
   }
+}
+
+@mixin Flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

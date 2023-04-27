@@ -1,0 +1,43 @@
+@import "../../mixin.scss";
+
+.Tabitems {
+  background-color: white;
+  padding: .8rem 0rem;
+  border-radius: 50px;
+  position: relative;
+  margin: 0;
+}
+
+.tab {
+  // margin: 10px;
+  padding: 0.8rem 1.9rem;
+  transition: all 400ms;
+  border-radius: 50px;
+  // margin: 0 10px;
+  position: relative;
+  cursor: pointer;
+  z-index: 10;
+
+}
+.active {
+  color: white;
+}
+.backgorund {
+  transition: all 400ms;
+  z-index: 1;
+  position: absolute;
+ left: 0;
+  top: 0;
+  display: inline-flex;
+  width: auto;
+  height: 100%;
+  padding: 0.8rem 3rem;
+  background: var(--gradient);
+  border-radius: 50px;
+  animation: ScorllSide 1s linear;
+}
+
+
+.flex {
+  @include Flex;
+}
