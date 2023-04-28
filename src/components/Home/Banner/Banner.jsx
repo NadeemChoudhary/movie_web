@@ -12,6 +12,7 @@ function Banner() {
   const [BackGround, setBackGround] = useState("");
   const { url } = useSelector((state) => state.Home);
   const { Data, Loading } = FetchApiHook("movie/popular");
+  const [Count, setCount] = useState(0);
   const [Query, setQuery] = useState(null);
   const SearchResult = (e) => {
     StoreData.setState({ DataZ: "ok" });
@@ -19,12 +20,14 @@ function Banner() {
       navigate(`/search/${Query}`);
     }
   };
-
+  // setTimeout(() => {
+  //   setCount(Count + 1);
+  // }, 5000);
   useEffect(() => {
     const bg =
       url + Data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path;
     setBackGround(bg);
-  }, [Data]);
+  }, [Data ]);
 
   return (
     <>

@@ -1,4 +1,39 @@
-.cr_item {
+
+.crausal{
+  position: relative;
+  .left{
+    position: absolute;
+    color: var(--orange);
+    opacity: .8;
+    font-size: 1.8rem;
+    z-index: 10;
+    left: -4%;
+    top: 17vh;
+    cursor: pointer;
+    &:hover{
+      opacity: 1;
+      transition: all 500ms;
+      transform: scale(1.1);
+    }
+ 
+  }
+  .right{
+    position: absolute;
+    color: var(--orange);
+    opacity: .8;
+    font-size: 1.8rem;
+    z-index: 10;
+    right: -6%;
+    top: 17vh;
+    cursor: pointer;
+    &:hover{
+      opacity: 1;
+      transition: all 500ms;
+      transform: scale(1.1);
+    }
+ 
+  }
+}.cr_item {
   margin-top: 2rem;
   display: flex;
   gap: 10px;

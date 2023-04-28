@@ -4,19 +4,19 @@ import "../Home.scss";
 import FetchApiHook from "../../../hooks/FetchApi";
 import Tab from "../../TabChange/Tab";
 import Carosal from "../Carausal/Carosal";
-export default function Trending() {
-  const [endPoint, setendPoint] = useState("day");
-  const { Data } = FetchApiHook(`/trending/all/${endPoint}`);
+export default function WhatsNew() {
+  const [endPoint, setendPoint] = useState("movie");
+  const { Data } = FetchApiHook(`${endPoint}/popular`);
   const ChangeTab = (tab) => {
-    setendPoint(tab === "Day" ? "day" : "week");
+    setendPoint(tab === "Movie" ? "movie" : "tv");
   };
   return (
     <Wrapper>
       <div className="flex">
         <div className="Trend">
-          <span>Trending</span>
+          <span>What's New</span>
         </div>
-        <Tab TabInput={["Day", "Week"]} TabChange={ChangeTab} />
+        <Tab TabInput={["Movie", "Tv "]} TabChange={ChangeTab} />
       </div>
       <Carosal data={Data?.results} />
     </Wrapper>
