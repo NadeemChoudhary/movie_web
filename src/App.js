@@ -14,6 +14,8 @@ import Header from "./components/HeadFoot/Header";
 import Form from "./components/form/Form";
 import Footer from "./components/HeadFoot/Footer";
 import FetchApiHook from "./hooks/FetchApi";
+import Movie from "./components/Movie/Movies";
+import TvShows from "./components/TvShow/TvSHow";
 
 function App() {
   const { App } = useSelector((state) => state);
@@ -36,7 +38,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/form" element={<Form />} />
-          <Route path="/explore/:type" element={<Explore />} />
+          <Route path="/explore/:type" element={<Movie />} />
+          <Route path="/explore/shows" element={<TvShows />} />
           <Route path="/:type/:id" element={<Detail />} />
           <Route exact path="/search/:query" element={<Search />} />
           <Route path="*" element={<NotFound />} />

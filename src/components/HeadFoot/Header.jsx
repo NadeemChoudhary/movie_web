@@ -35,7 +35,7 @@ function Header() {
 
           </div>
           <ul>
-            <li onClick={() => navigateTo("movie")}>Movies</li>
+            <li onClick={() => navigateTo("movie")}>Upcoming Movies</li>
             <li onClick={() => navigateTo("shows")}>TV Show</li>
             <li><BiSearchAlt2 onClick={() => setShow(!Show)} /></li>
           </ul>
