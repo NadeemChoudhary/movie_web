@@ -17,3 +17,11 @@
   justify-content: space-between;
   align-items: center;
 }
+
+
+@mixin hr{
+  border-bottom: 1px solid;
+      padding-bottom: .9rem;
+      border-width: 0.1rem;
+      border-color: rgba(153, 151, 151, 0.437);
+}

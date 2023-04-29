@@ -14,7 +14,7 @@ export default function Rating({ rating }) {
             pathColor: rating < 5 ? "red" : rating < 7 ? "orange" : "green",
           })}
         />
-        ;
+        
       </div>
     </>
   );

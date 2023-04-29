@@ -6,11 +6,11 @@ import LazyLoad from "../../Image/LazyLoad";
 import Rating from "../CircularRating/Rating";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-export default function Carosal({ data }) {
+export default function Carosal({ data , endPoint }) {
   const { url } = useSelector((state) => state.Home);
   const Carausal = useRef();
   const navigate = useNavigate();
-
+  console.log(data, "data");
   const Move = (dir) => {
     const container = Carausal.current;
     const scrollAmount =
@@ -33,7 +33,11 @@ export default function Carosal({ data }) {
               : NoPoster;
             return (
               <>
-                <div className="Box" key={i}>
+                <div
+                  className="Box"
+                  key={i}
+                  onClick={() => navigate(`/${result?.media_type || endPoint}/${result.id}`)}
+                >
                   <div className="poster">
                     <LazyLoad src={Url} />
                     <Rating rating={result.vote_average.toFixed(1)} />

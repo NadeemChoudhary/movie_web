@@ -38,7 +38,7 @@ function App() {
           <Route path="/form" element={<Form />} />
           <Route path="/explore/:type" element={<Explore />} />
           <Route path="/:type/:id" element={<Detail />} />
-          <Route path="/search/:query " element={<Search />} />
+          <Route exact path="/search/:query" element={<Search />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

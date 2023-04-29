@@ -1,0 +1,31 @@
+.CastHead {
+  color: white;
+  z-index: 10;
+  width: 100%;
+  overflow: auto;
+
+  margin: 0 auto;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  //   flex-shrink: 1;
+  .CastImg {
+    display: flex;
+    overflow: auto;
+    .name {
+      text-align: center;
+      margin-top: 0.5rem;
+      font-size: 13px;
+    }
+  }
+  .CastImg img {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    gap: 41px;
+    overflow: auto;
+    margin: 0 8px;
+  }
+}
