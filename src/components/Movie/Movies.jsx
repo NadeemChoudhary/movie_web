@@ -28,7 +28,7 @@ export default function Movie() {
            <>
            
            <div className="image" style={{marginTop : '5rem'}}
-            // onClick={() => navigate(`/${res?.media_type}/${res.id}`)}
+            onClick={() => navigate(`/movie/${res.id}`)}
             >
               <LazyLoad
                 src={
